@@ -2,36 +2,40 @@ const boxElement = document.getElementById("box");
 const resetElement = document.getElementById("reset");
 const controlElement = document.getElementById("control");
 
-let cnt = 0;
-let isPause = false;
+let config = {
+    cnt: 0,
+    isPause: true
+};
 
 function saveConfig() {
-    localStorage.setItem("cnt", cnt);
+    localStorage.setItem("config", JSON.stringify(config));
 }
 
 function loadConfig() {
-    const strConfig = localStorage.getItem("cnt");
+    const strConfig = localStorage.getItem("config");
     if (strConfig) {
-        cnt = Number.parseInt(strConfig);
+        config = JSON.parse(strConfig);
     }
 }
 
 loadConfig();
-boxElement.innerText = cnt;
-controlElement.innerText = isPause ? "开始" : "暂停";
+boxElement.innerText = config.cnt;
+controlElement.innerText = config.isPause ? "开始" : "暂停";
+console.log(config);
+
 setInterval(() => {
-    if(!isPause){
+    if(!config.isPause){
         return;
     }
-    boxElement.innerText = cnt;
-    cnt++;
+    boxElement.innerText = config.cnt;
+    config.cnt++;
     saveConfig();
 }, 1000);
 
 resetElement.onclick = () => {
-    cnt = 0;
+    config.cnt = 0;
 }
 controlElement.onclick = () => {
-    isPause = !isPause;
-    controlElement.innerText = isPause ? "开始" : "暂停";
+    config.isPause = !config.isPause;
+    controlElement.innerText = config.isPause ? "开始" : "暂停";
 }
