@@ -1,4 +1,65 @@
+.title {
+    font-size: 30px;
+    text-align: center;
+    color: rgb(33, 183, 65);
+    border-bottom: 4px solid;
+}
+
+.slogan {
+    text-align: center;
+    font-style: italic;
+    color: gray;
+}
+
 .box {
-    font-size: 20px;
-    color:aqua;
+    margin: 20px auto;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #30f033;
+    border-radius: 5px;
+    text-align: center;
+    color: rgb(33, 183, 65);
+}
+
+/* .config {
+    margin: 20px auto;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+} */
+
+.process-bar-container {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+    position: relative;
+    height: 20px;
+}
+
+.process-bar {
+    display: block;
+    /* Ensures width works */
+    height: 100%;
+    background-color: #4caf50;
+    width: 0;
+    transition: width 0.3s ease;
+    /* Smooth animation */
+}
+
+.process-value {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(82, 5, 237);
+    font-weight: bold;
+    font-size: 12px;
 }

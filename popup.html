@@ -7,11 +7,34 @@
 </head>
 
 <body>
-    <h1>欢迎</h1>
-    <div class="box" id="box">0</div>
+    <div class="title">牛马加油站</div>
+    <div id="slogan" class="slogan"></div>
     <div class="box">
-        <button id="reset">重置</button>
-        <button id="control">控制</button>
+        <div>
+            <span>实时进账</span><span id="current-income">0.00</span>
+        </div>
+        <div class="process-bar-container">
+            <div class="process-bar" id="process-bar"></div>
+            <div class="process-value" id="process-value">0%</div>
+        </div>
+    </div>
+    </div>
+    <div class="box">
+        <div>
+            <span>今日到手</span><span id="daily-income">0.00</span>
+        </div>
+        <div>
+            <span>下班倒计时</span><span id="countdown">00:00:00</span>
+        </div>
+    </div>
+    <div class="box config" style="display: none;">
+        <input type="number" id="salary" placeholder="请输入月薪">
+        <input type="time" id="start-time">
+        <input type="time" id="end-time">
+        <button id="save">保存</button>
+    </div>
+    <div class="box">
+        <button id="config">配置草料信息</button>
     </div>
     <script type="text/javascript" src="popup.js"></script>
 </body>
